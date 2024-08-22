@@ -1,40 +1,4 @@
-// // JS is synchronous language with single threaded.
-// // Execute the code line by line.
-// // Blocking Code VS Non-Blocking Code.
-//     // Blocking Code -> It breaks the flow of the code till our another work is going on.
-//     // Non-Blocking Code -> It continues the flow of the code even if our code is doing some another work.
-//     // Example -> Reading the file as synchronous make the code Block and does not execute the other code.
-//                 // But the reading the file as asynchronous make the code to execute the other lines of code also while the code is reading the file.
-//                 // Both of the cases are good but it depends on the situation and type of the work on which type we want to work with.
-
-
-// // Code
-// const h1 = document.querySelector('h1');
-// const changeText = function(){
-//     h1.innerHTML = 'I am learning React JS';
-//     const h3 = document.createElement('h3');
-//     h3.innerText = 'Changed by using setTimeOut';
-//     document.body.appendChild(h3);
-// }
-// // const changeMe = setTimeout(changeText, 2000)    //This make the code to execute after 2s
-
-// // If we want to stop the code from changing then...
-// document.querySelector('#stop').addEventListener('click', function(){
-//     clearTimeout(changeMe);
-//     const h2 = document.createElement('h2');
-//     h2.innerHTML = 'STOPPED by ClearTimeOut Function';
-//     document.body.appendChild(h2);
-// })
-// By using the clearTimeOut function we stopped the code to get changed..
-
-
-
-// setTimeOut
-// clearTimeOut
-// setInterval
-// clearInterval
-
-                    // Project of async JS
+                    // Learning Async JS
 // function declared which will change the name after some specific time
 // const changeFullName = function(){
 //     document.getElementById('status').innerHTML = "I have learned HTML & CSS";
@@ -51,7 +15,7 @@
 // })
 
 
-//                         // Task - 1
+                        // Task - 1
 // // Selecting the name..
 // const printingPress = function(){
 //     // document.getElementById('name').innerHTML = "Hello, Aman";
@@ -68,8 +32,9 @@
 //     clearInterval(printName)
 // })
 
-
-// Selecting Buttons
+                            // Project - 1
+function project1(){
+    // Selecting Buttons
 const startChanging = document.getElementById('startBGC');
 const stopChanging = document.getElementById('stopBGC');
 // Hex code range = 0-9, A-F length is 6
@@ -91,14 +56,43 @@ const startChangingBackgroundColor = function(){
     function changeBgColor(){
         document.body.style.backgroundColor = randomColor()
     }
-    interval = setInterval(changeBgColor, 1000)
+    if(!interval){
+        interval = setInterval(changeBgColor, 1000)
+    }
 }
 
 // stop changing the background color of the body
 const stopChangingBackgroundColor = function(){
     clearInterval(interval)
+    interval = null;
 }
 
 // click event listener on start button...
 startChanging.addEventListener('click', startChangingBackgroundColor);
 stopChanging.addEventListener('click', stopChangingBackgroundColor)
+}
+project1()
+                            
+                            // Project - 2
+function project2(){
+    const insert = document.getElementById('insert');
+    window.addEventListener("keydown", (e) => {
+        insert.innerHTML = `
+        <div class="color">
+            <table>
+                <tr>
+                    <td>Key</td>
+                    <td>Key Code</td>
+                    <td>Code</td>
+                </tr>
+                <tr>
+                    <td>${e.key === ' '? 'Space': e.key}</td>
+                    <td>${e.keyCode}</td>
+                    <td>${e.code}</td>
+                </tr>
+            </table>
+        </div>
+        `;
+    })
+}
+project2();
