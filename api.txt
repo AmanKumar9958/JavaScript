@@ -1,0 +1,5 @@
+create a card with the details fetched by using the API of github having
+username
+profile picture
+followers
+profile created at

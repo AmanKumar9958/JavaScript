@@ -1,4 +1,5 @@
-                    // Learning Async JS
+// JS is not asynchronous by default and it is also a single threaded language. We need to make it asynchronous.
+                   // Learning Async JS
 // function declared which will change the name after some specific time
 // const changeFullName = function(){
 //     document.getElementById('status').innerHTML = "I have learned HTML & CSS";
@@ -16,21 +17,23 @@
 
 
                         // Task - 1
-// // Selecting the name..
-// const printingPress = function(){
-//     // document.getElementById('name').innerHTML = "Hello, Aman";
-// }
-// // Selecting the buttons..
-// const startPrint = document.getElementById('startPrint')
-// const stopPrint = document.getElementById('stopPrint')
-
-// startPrint.addEventListener('click', function(){
-//     const printName = setInterval(console.log('Hello, Aman'), 1000);
-    
-// })
-// stopPrint.addEventListener('click', function(){
-//     clearInterval(printName)
-// })
+const startPrint = document.getElementById('startPrint');
+const stopPrint = document.getElementById('stopPrint');
+const output = document.getElementById('output');
+let interval;
+const startPrinting = function(){
+    function print(){
+        const nameElement = document.createElement('p');
+        nameElement.textContent = "Aman Kumar";
+        output.appendChild(nameElement);
+    }
+    interval = setInterval(print, 1000)
+}
+const stopPrinting = function(){
+    clearInterval(interval);
+}
+startPrint.addEventListener('click', startPrinting);
+stopPrint.addEventListener('click', stopPrinting);
 
                             // Project - 1
 function project1(){
