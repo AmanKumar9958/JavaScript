@@ -49,6 +49,60 @@ const promise2 = new Promise(function(resolve, reject){
     }, 3000)
 })
 promise2.then(function(user){
-    console.log(user);
+    // console.log(user);    
+    return user.userName
+}).then((userName) => {
+    // console.log(userName);
+}).finally(() => console.log("The promise is either resolved or rejected")
+)
+
+
+// Promise 3
+
+const promise3 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = false
+        if(!error){
+            resolve({
+                userName: "JavaScript",
+                password: "JS"
+            })
+        }
+        else{
+            reject("Promise 3 failed")
+        }
+    }, 2000)
+})
+
+async function consumePromise3(){
+    try{
+        const response = await promise3;
+        // console.log(response);
+    }
+    catch{
+        // console.log(error);        
+    }
+}
+consumePromise3();
+
+// async function getAllUser(){
+//     try{
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//         // console.log(response);        
+//         const data = await response.json();
+//         console.log(data);
+//     }
+//     catch(error){
+//         console.log("E: ", error);        
+//     }
+// }
+// getAllUser();
+
+fetch('https://jsonplaceholder.typicode.com/users').then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data);
     
 })
+.catch((error) => console.log(error));
