@@ -41,6 +41,20 @@
             border-radius: 50%;
             text-align: center;
         }
+        button{
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1.09em;
+            color: white;
+            margin-top: 2vh;
+        }
+        #remove{
+            background-color: red;
+        }
+        #add{
+            background-color: green;
+        }
     </style>
 </head>
 <body>
@@ -53,6 +67,11 @@
                 <p id="location"></p>
             </div>
             <p id="profileDate"></p>
+            <div id="buttons">
+                <p id="status" style="text-align: center; font-weight: bold; margin-top: 1vh; font-size: 1.2em; color: red;">Stranger</p>
+                <button id="remove">Remove</button>
+                <button id="add">Add Friend</button>
+            </div>
         </div>
     </div>
     <script src="userProfile.js"></script>
