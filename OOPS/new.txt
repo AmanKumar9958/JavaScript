@@ -1,0 +1,4 @@
+new is used to create instances of objects from classes or constructor functions, allowing for multiple objects to be created with the same structure and behavior.
+new keyword is also called constructor
+It created a new blank object..
+using this keyword it adds data to the new keyword..

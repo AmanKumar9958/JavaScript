@@ -13,9 +13,27 @@ const user = {
 
 // if we want so many users in the database so by going this way is very difficult....to fix this we have "constructor"...
 
-// new is used to create instances of objects from classes or constructor functions, allowing for multiple objects to be created with the same structure and behavior.
-// new keyword is also called constructor
-
 function userData(username, loginCount, isLoggedIn){
-    
+                        //we can declare by creating a new variable....
+    // MyName: username;
+    // noOfLogin: loginCount;
+                        //we can declare by this also...
+    this.username = username;
+    this.loginCount = loginCount;
+    return this;
 }
+const user1 = userData("Aman Kumar", 10, true);
+// console.log(user1);
+
+const user2 = userData("ChaiCode", 20, true);
+// console.log(user1);     //after creating user2 our user1 data gets overWrite...
+// console.log(user2);  //this prints user2 data but over write the user1 data...
+
+
+
+// To avoid this we use "new" keyword...
+const user4 = new userData("JS", 100, true)
+const user5 = new userData("Python", 1, false)
+// console.log(user4);     //values didn't overwrite this time...
+console.log(user5.constructor);     //constructor is the details about itself...
+
