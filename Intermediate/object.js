@@ -1,17 +1,17 @@
 // Creating Object..
 const user = {
-  name: "Aman",
-  age: 19,
-  course: "BCA",
-  favLang: "WebDev",
-  address: {            //object inside an object..
+    name: "Aman",
+    age: 19,
+    course: "BCA",
+    favLang: "WebDev",
+    address: {            //object inside an object..
     city: 'New Delhi',
     pin: 110044,
     moreInfo: {
         population: 10398,
         area: '209 Sq KM'
     }
-  }
+    }
 };
 // Adding extra things..
 user.mobileNumber = 9958414968;
@@ -23,8 +23,8 @@ user.age = 17;
 
 // creating another object..
 const user2 = {
-  name: "Rohan",
-  age: 17,
+    name: "Rohan",
+    age: 17,
 };
 // Matching the values..
 // console.log(user.name === user2.name);
@@ -111,4 +111,34 @@ const collegeData = {
         item2: "Chalk"
     }
 }
-console.log(collegeData.sportsItems.indoor);
+// console.log(collegeData.sportsItems.indoor);
+
+
+
+// Advance Object..
+// console.log(Math.PI);
+// using property descriptor, gives the details about the properties of the object...
+// Math is an object an PI is the property...
+const descriptor = Object.getOwnPropertyDescriptor(Math, "PI")
+// console.log(descriptor);
+
+const myNewObject = {
+    name: "Dog",
+    price: 2000,
+    isAvailable: true
+}
+// console.log(myNewObject);
+// console.log(Object.getOwnPropertyDescriptor(myNewObject));  // undefined -> because property descriptor gives details about the property of object and here we are directly writing object..
+console.log(Object.getOwnPropertyDescriptor(myNewObject, "name"));
+
+// Since, we have created our own object so we want to modify the properties of our object..
+Object.defineProperty(myNewObject, "name", {    // it takes 3 parameters -> object, property and changes..
+    writable: false,
+    enumerable: false,
+    configurable: false,
+})
+// console.log(Object.getOwnPropertyDescriptor(myNewObject, "name"));   // all the values get changed..
+
+
+
+
