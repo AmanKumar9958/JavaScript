@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        section{
+            border: 2px solid black;
+            padding-bottom: 2vh;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .highlight{
+            background-color: yellow;
+            font-weight: bold;
+            color: black;
+        }
+        .highlight2{
+            background-color: cyan;
+            font-weight: bold;
+            color: black;
+        }
+        .highlight3{
+            background-color: lime;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">DOM Fun Examples</h1>
+    <!-- Example - 1 Accessing the DOM element -->
+    <section id="example-1">
+        <h2>Accessing the DOM Element</h2>
+        <p id="myParagraph">
+            This is the paragraph. Click on the button the change me!
+        </p>
+        <button id="changeTextButton" onclick="changeParaText()">Change Text</button>
+    </section>
+
+    <!-- Example - 2 Traversing the DOM -->
+    <section id="example-2">
+        <h2>Traversing the DOM</h2>
+        <ul id="citiesList">
+            <li>Lucknow</li>
+            <li>Jaipur</li>
+            <li>Mumbai</li>
+            <li>Nagpur</li>
+        </ul>
+        <button id="highlightFirstCity">Highlight 1st City</button>
+    </section>
+
+    <!-- Example - 3 Manipulating DOM Element -->
+    <section id="example-3">
+        <h2>Manipulating DOM Element</h2>
+        <div id="coffeeOrder">
+            Order: <span id="coffeeType">Latte</span>
+        </div>
+        <button id="changeOrder" onclick="changeOrder()">Change order to espresso</button>
+    </section>
+
+    <!-- Example - 4 Creating and Inserting Elements -->
+    <section id="example-4">
+        <h2>Creating and Inserting Elements</h2>
+        <button id="addNewItem" onclick="addNewElement()">Add new item to the shopping list</button>
+        <ul id="shoppingList">
+            <li>Bread</li>
+            <li>Milk</li>
+            <li>Rice</li>
+        </ul>
+    </section>
+
+    <!-- Example - 5 Removing the DOM Element -->
+    <section id="example-5">
+        <h2>Removing the DOM Element</h2>
+        <ul id="taskList">
+            <li>Workout</li>
+            <li>Drink Water</li>
+            <li>Running</li>
+            <li>Coding</li>
+        </ul>
+        <button id="removeElement" onclick="removeElement()">Remove</button>
+    </section>
+
+    <!-- Example - 6 Form Handling -->
+    <section id="example-6">
+        <h2>Form Handling</h2>
+        <form id="feedbackForm">
+            <label for="feedbackInput">Your Feedback:</label>
+            <input type="text" id="feedbackInput" placeholder="Enter your feedback here">
+            <button type="submit">Summit Feedback</button>
+            <p id="displayFeedback"></p>
+        </form>
+    </section>
+
+    <!-- Example - 7 CSS Class Manipulation -->
+    <section id="example-6">
+        <h2>CSS Class Manipulation</h2>
+        <p id="text">This text will change color!!</p>
+        <button id="highlight">Toggle Highlight</button>
+    </section>
+    <script src="DOMCourse.js"></script>
+</body>
+</html>
