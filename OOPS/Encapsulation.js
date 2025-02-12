@@ -3,30 +3,32 @@
 // the important OOP concept of data hiding.
 // To access the data we use different types of methods called getter and setter.
 
+// Encapsulation means restricting direct access to data and only allowing it through methods
+
 class College{
-    #name = "IITM";  // private variable
-    #id = 229;  // private variable
+    #name  // private variable
+    #id  // private variable
 
     // constructor
     constructor(name, id){
-        this.name = name;
-        this.id = id;
+        this.#name = name;
+        this.#id = id;
     }
 
     // display
     display(){
-        console.log(`College Name: ${this.name}, College ID: ${this.id}`);
+        console.log(`College Name: ${this.#name}, College ID: ${this.#id}`);
     }
 
     // getter
     getName(){
-        console.log(`College Name: ${this.name}`);
+        console.log(`College Name: ${this.#name}`);
     }
 
     // setter
     setName(name, id){
-        this.name = name;
-        this.id = id;
+        this.#name = name;
+        this.#id = id;
     }
 }
 
